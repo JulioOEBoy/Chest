@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Porcentagem</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+        .container {
+            max-width: 300px;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        input, button {
+            width: 100%;
+            margin: 10px 0;
+            padding: 10px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Calculadora de Porcentagem</h2>
+        <input type="number" id="porcentagem" placeholder="Coloque a porcentagem aqui">
+        <input type="number" id="valor" placeholder="Coloque o valor aqui">
+        <button onclick="calcular()">Calcular</button>
+        <h3 id="resultado"></h3>
+    </div>
+
+    <script>
+        function calcular() {
+            let n = parseFloat(document.getElementById("porcentagem").value);
+            let n1 = parseFloat(document.getElementById("valor").value);
+
+            if (!isNaN(n) && !isNaN(n1)) {
+                let n2 = (n * n1) / 100;
+                document.getElementById("resultado").innerText = `O valor é: ${n2}`;
+            } else {
+                document.getElementById("resultado").innerText = "Por favor, insira valores válidos.";
+            }
+        }
+    </script>
+</body>
+</html>

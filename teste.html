@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedido de Namoro</title>
+    <style>
+        body {
+            background: linear-gradient(to right, #FF7F7F, #FFB6C1);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        .container {
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+        .message {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #FFFFFF;
+            display: block;
+            margin-top: 20px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+        }
+        button {
+            font-size: 1.5em;
+            padding: 15px 30px;
+            margin: 10px;
+            cursor: pointer;
+            border: 2px solid white;
+            border-radius: 30px;
+            background-color: rgba(255, 255, 255, 0.6);
+            color: #FF69B4;
+            box-shadow: 0px 5px 15px rgba(255, 105, 180, 0.3);
+            transition: 0.3s;
+        }
+        button:hover {
+            background-color: #FF69B4;
+            color: white;
+            transform: scale(1.1);
+        }
+        #sim {
+            background-color: #32CD32;
+            color: white;
+        }
+        #nao {
+            background-color: #FF6347;
+            color: white;
+        }
+        .heart {
+            font-size: 5em;
+            color: #FF1493;
+            position: absolute;
+            top: 10%;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1;
+            animation: heartbeat 1.5s infinite;
+        }
+        @keyframes heartbeat {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+    </style>
+</head>
+<body>
+
+<div class="heart">💖</div>
+
+<div class="container">
+    <p class="message" id="message">Quer namorar comigo?</p>
+    <button id="sim">Sim</button>
+    <button id="nao">Não</button>
+</div>
+
+<script>
+    document.getElementById('sim').addEventListener('click', function() {
+        document.getElementById('message').innerText = 'Parabéns, estamos namorando!';
+        document.getElementById('sim').style.display = 'none';
+        document.getElementById('nao').style.display = 'none';
+    });
+
+    document.getElementById('nao').addEventListener('click', function() {
+        var width = window.innerWidth - 100; // Limita a posição X para a largura da tela
+        var height = window.innerHeight - 100; // Limita a posição Y para a altura da tela
+        var randomX = Math.random() * width; // Gera uma posição aleatória X
+        var randomY = Math.random() * height; // Gera uma posição aleatória Y
+
+        // Move o botão "Não" dentro da área visível da tela
+        document.getElementById('nao').style.position = 'absolute';
+        document.getElementById('nao').style.left = randomX + 'px';
+        document.getElementById('nao').style.top = randomY + 'px';
+    });
+</script>
+
+</body>
+</html>
