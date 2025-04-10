@@ -1,0 +1,31 @@
+<!-- contador.html -->
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Contador JS</title>
+</head>
+<body>
+  <h2>Contador</h2>
+  <input type="number" id="inicio" placeholder="Início">
+  <input type="number" id="fim" placeholder="Fim">
+  <input type="number" id="passo" placeholder="Passo">
+  <button onclick="contar()">Contar</button>
+  <p id="resultado"></p>
+
+  <script>
+    function contar() {
+      const ini = Number(document.getElementById('inicio').value);
+      const fim = Number(document.getElementById('fim').value);
+      const passo = Number(document.getElementById('passo').value) || 1;
+
+      let res = '';
+      for (let i = ini; i <= fim; i += passo) {
+        res += `${i} 👉 `;
+      }
+      res += '🏁';
+      document.getElementById('resultado').innerText = res;
+    }
+  </script>
+</body>
+</html>
