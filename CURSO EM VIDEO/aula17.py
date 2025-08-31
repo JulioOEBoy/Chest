@@ -11,7 +11,7 @@ del lanche[3]               #remove pelo numero
 lanche.pop(3)               #remove pelo numero
 lanche.remove('pizza')      #remove pelo nome
 
-só lanche.pop()       #remove só o ultimo
+lanche.pop()       #remove só o ultimo
 
 # se tentar remover algo que não existe da erro
 
@@ -28,4 +28,4 @@ valores.sort(reverse=True)           #Ele coloca a ordem ao contrario do maior a
 
 len(valores)         # ele conta quantos elementos tem
 
-num.remove(2) #só elemina o primeiro 2
+#num.remove(2) #só elemina o primeiro 2
